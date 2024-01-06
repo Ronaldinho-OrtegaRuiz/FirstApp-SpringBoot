@@ -10,7 +10,7 @@ public class UserController {
 
     @GetMapping("/details")
     public String detail(Model model){
-        User user = new User("Ronal", "Ortega");
+        User user = new User("Ronal", "Ortega", null);
         model.addAttribute("title", "User details");
         model.addAttribute("user", user);
         return "details";
