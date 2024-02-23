@@ -1,10 +1,8 @@
 package com.ronal.curso.springboot.webapp.springbootweb.controllers;
 
+import com.ronal.curso.springboot.webapp.springbootweb.models.User;
 import com.ronal.curso.springboot.webapp.springbootweb.models.dto.ParamDto;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -25,6 +23,12 @@ public class PathVariableController {
     json.put("product",product);
     json.put("id",id);
     return json;
+    }
+
+    @PostMapping("/create")
+    public User create(@RequestBody User user){
+        user.setName(user.getName().toUpperCase());
+        return user;
     }
 
 }
